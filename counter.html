@@ -1,5 +1,4 @@
 <html>
-
 <head>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -7,8 +6,10 @@
 <style>
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+
 body {
     font-family: 'Open Sans', sans-serif;
+    background: red;
 }
 
 body p {
@@ -17,24 +18,29 @@ body p {
 }
 
 
-
-
 .circle {
     width: 200px;
     height: 20px;
-    background-color: #601785;
     position: absolute;
-    clip: rect(0px,100px,40px,0px);
+    background: yellow;
+    clip: rect(30px,100px,50px,0px);
     margin: 0 auto;
     padding: 20px;
 }
 
+.numbers{
+    bottom: 0px;
+    position: absolute;
+    padding-bottom: 8px;
+}
+
+.number_single{
+    padding: 1px;
+}
+
 </style>
 
-
 <script>
-
-
 
 // TODO: make jquery plugin
 var getNumberDiv = function(number){
@@ -44,10 +50,36 @@ var getNumberDiv = function(number){
 $(function(){
 
     var container = $(".numbers");
-    for(var ii = 0; ii < 9; ii++){
+    for(var ii = 0; ii <= 9; ii++){
+        console.log(ii);
         var div = getNumberDiv(ii);
         container.prepend(div);
     }
+
+
+
+    var bottom = 0;
+
+    var start = null;
+    function step(timestamp) {
+        if (start === null) start = timestamp;
+        var progress = timestamp - start;
+
+
+        if(progress % 5  < 3){
+            bottom-=1;
+            $(".numbers").css("bottom", bottom + "px");
+        }
+
+
+        if (progress < 20* 2000) {
+            window.requestAnimationFrame(step);
+        }
+    }
+
+    setTimeout(function(){
+        window.requestAnimationFrame(step);
+    }, 2000);
 
 
 });
