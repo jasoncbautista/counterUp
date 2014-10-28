@@ -21,12 +21,12 @@ body p {
 
 .circle {
     width: 200px;
-    height: 200px;
-    border-radius: 100px;
+    height: 20px;
     background-color: #601785;
     position: absolute;
-    clip: rect(0px,100px,200px,0px);
+    clip: rect(0px,100px,40px,0px);
     margin: 0 auto;
+    padding: 20px;
 }
 
 </style>
@@ -38,7 +38,7 @@ body p {
 
 // TODO: make jquery plugin
 var getNumberDiv = function(number){
-    return $("<div class='number_single'>" + String(number) + "</div>";
+    return $("<div class='number_single'>" + String(number) + "</div>");
 };
 
 $(function(){
@@ -46,7 +46,7 @@ $(function(){
     var container = $(".numbers");
     for(var ii = 0; ii < 9; ii++){
         var div = getNumberDiv(ii);
-        container.append(div);
+        container.prepend(div);
     }
 
 
@@ -71,11 +71,14 @@ Some paragraph with italics.
 </body>
 
 
-<div class="circle"> 00 </div>
-
+<div class="circle"> 
 
 <div class="numbers">
 </div>
+
+
+</div>
+
 
 
 
