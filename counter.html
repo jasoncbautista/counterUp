@@ -72,14 +72,14 @@ $(function(){
         }
 
 
-        if (progress < 20* 2000) {
+        if (progress < 2 * 2000) {
             window.requestAnimationFrame(step);
         }
     }
 
     setTimeout(function(){
         window.requestAnimationFrame(step);
-    }, 2000);
+    }, 800);
 
 
 });
