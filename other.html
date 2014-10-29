@@ -6,6 +6,8 @@ h1 {
       -webkit-animation-duration: 3s;
       -moz-animation-name: slidein;
       -webkit-animation-name: slidein;
+      position: absolute;
+      top: 0px;
     }
     
     @-moz-keyframes slidein {
@@ -22,13 +24,11 @@ h1 {
     
     @-webkit-keyframes slidein {
       from {
-        margin-left:100%;
-        width:300%
+        top: 0px;
       }
       
       to {
-        margin-left:0%;
-        width:100%;
+          top: 200px;
       }
     }
 
