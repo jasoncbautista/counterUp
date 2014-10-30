@@ -6,10 +6,9 @@ h1 {
       -webkit-animation-duration: 2s;
       -moz-animation-name: slidein;
       -webkit-animation-name: slidein;
-      -webkit-animation-delay: 1.5s;
+      /*-webkit-animation-delay: 1.5s;*/
       -webkit-animation-fill-mode: forwards;
       position: absolute;
-      top: 225px;
       opacity: 0.0;
       left: 200px;
     }
@@ -36,22 +35,7 @@ h1 {
     }
 
         
-    @-moz-keyframes slidein {
-      0% {
-        margin-left:100%;
-        width:300%
-      }
-
-      50% {
-          opacity: 1.0;
-      }
-      
-      100%{
-        margin-left:0%;
-        opacity: 1.0;
-        width:100%;
-      }
-    }
+    @-moz-keyframes slidein {}
     
     @-webkit-keyframes slidein {
 
@@ -66,7 +50,7 @@ h1 {
       
       
       100%{
-          top: 225px;
+          top: 20%;
           opacity: 1.0;
       }
     }
