@@ -2,8 +2,8 @@
 <head>
 <style>
 h1 {
-      -moz-animation-duration: 2s;
-      -webkit-animation-duration: 2s;
+      -moz-animation-duration: 3s;
+      -webkit-animation-duration: 3s;
       -moz-animation-name: slidein;
       -webkit-animation-name: slidein;
       /*-webkit-animation-delay: 1.5s;*/
@@ -23,9 +23,14 @@ h1 {
         padding: 20px;
         border-radius: 12px;
         color: white;
+        text-align:center;
 
         -webkit-animation-duration: 2s;
-        -webkit-animation-delay: 4.5s;
+        -webkit-animation-delay: 2.5s;
+
+        -webkit-animation-name: slidefrom;
+      -webkit-animation-fill-mode: forwards;
+        opacity: 0.0;
     }
     
 
@@ -45,7 +50,7 @@ h1 {
       }
 
       50% {
-          opacity: 1.0;
+      /*    opacity: 1.0;*/
       }
       
       
@@ -54,6 +59,23 @@ h1 {
           opacity: 1.0;
       }
     }
+
+    @-webkit-keyframes slidefrom{
+
+      0%{
+        opacity: 0.0;
+      }
+
+      
+      100%{
+          
+          opacity: 1.0;
+      }
+    }
+
+ 
+
+
 
     .field{
         width: 100%;
@@ -73,17 +95,19 @@ $(function(){
 </script>
 </head>
 <body>
-<div>
-    <img class="field" src="field.png"/>
-
-</div>
-<h1>
-    <img class="marker" src="marker.png">
-    <div  class="lil-sign">
-       First Downs 
-           
+    <div>
+        <img class="field" src="field.png"/>
     </div>
-</h1>
 
+    <h1>
+        <img class="marker" src="marker.png"/>
+
+        <div  class="lil-sign">
+           First Downs 
+           </br>
+           57
+
+        </div>
+    </h1>
 </body>
 </html>
