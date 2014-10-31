@@ -95,10 +95,19 @@ h1 {
 </style>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="odometer-theme-car.css" />
+<script src="odometer.js"></script>
+
 <script>
 
 $(function(){
         console.log('hi');
+
+        seTimeout(function(){
+            $('.odometer').html(57)
+        }, 4000);
 
 
 });
@@ -116,7 +125,9 @@ $(function(){
         <div  class="lil-sign">
            First Downs 
            </br>
-           57
+           <span class="odometer">
+            0 
+        </span>
 
         </div>
     </h1>
